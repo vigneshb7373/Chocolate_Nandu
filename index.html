@@ -178,8 +178,242 @@
 </head>
 <body>
 
+    <!-- Background Music (replace with your actual music file URL) -->
+    <<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Love Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #8B4513 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Floating chocolate decorations */
+        .chocolate-float {
+            position: fixed;
+            font-size: 3em;
+            opacity: 0.3;
+            animation: float-animation 6s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 500;
+        }
+
+        .chocolate1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .chocolate2 { top: 20%; right: 8%; animation-delay: 2s; }
+        .chocolate3 { top: 50%; left: 3%; animation-delay: 1s; }
+        .chocolate4 { top: 70%; right: 5%; animation-delay: 3s; }
+        .chocolate5 { top: 30%; left: 15%; animation-delay: 1.5s; }
+        .chocolate6 { top: 60%; right: 12%; animation-delay: 2.5s; }
+        .chocolate7 { top: 15%; left: 80%; animation-delay: 0.5s; }
+        .chocolate8 { top: 75%; left: 20%; animation-delay: 3.5s; }
+
+        @keyframes float-animation {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        .container {
+            background: rgba(101, 67, 33, 0.95);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            width: 100%;
+            border: 3px solid #D2691E;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .heart-chocolate {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #FDBCB4;
+            font-style: italic;
+        }
+
+        .quote {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-left: 5px solid #FFD700;
+            border-radius: 10px;
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #fff;
+            text-align: center;
+            font-style: italic;
+            margin: 30px 0;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .quote-text {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .emoji-decoration {
+            font-size: 1.5em;
+            margin: 15px 0;
+            letter-spacing: 10px;
+        }
+
+        .footer-message {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.1em;
+            color: #FDBCB4;
+        }
+
+        /* Falling chocolates live animation */
+        .falling-choco {
+            position: fixed;
+            top: -40px;
+            z-index: 1000;
+            font-size: 2em;
+            pointer-events: none;
+            user-select: none;
+            animation: fall-choco linear forwards;
+        }
+        @keyframes fall-choco {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0.7;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .quote {
+                font-size: 1.1em;
+                padding: 20px;
+            }
+            .heart-chocolate {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
+            .quote {
+                font-size: 0.95em;
+                padding: 15px;
+            }
+            .heart-chocolate {
+                font-size: 1.5em;
+            }
+            .chocolate-float {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
     <!-- Background Music (replace with your actual music file URL) -->https://m.fringster.com/ringtone/189895/#
     <audio id="bg-music" src="YOUR_MUSIC_URL_HERE" autoplay loop></audio>
+
+    <!-- Floating chocolate decorations -->
+    <div class="chocolate-float chocolate1">🍫</div>
+    <div class="chocolate-float chocolate2">🍫</div>
+    <div class="chocolate-float chocolate3">🍫</div>
+    <div class="chocolate-float chocolate4">🍫</div>
+    <div class="chocolate-float chocolate5">🍫</div>
+    <div class="chocolate-float chocolate6">🍫</div>
+    <div class="chocolate-float chocolate7">🍫</div>
+    <div class="chocolate-float chocolate8">🍫</div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="header">
+            <div class="heart-chocolate">💋🍫💋</div>
+            <h1>Sweet Chocolate of Life</h1>
+            <p class="subtitle">A Love Letter in Chocolate</p>
+        </div>
+
+        <div class="quote">
+            <p class="quote-text">
+                "To my sweet chocolate of life, i remind you that you are and will be the sweetest part of my life till the end. Thanks for giving your sweet life to me for a bite 💋 and enjoy to the end of the life. Happy chocolate day dear"
+            </p>
+            <div class="emoji-decoration">🍫 💋 🍫 💋 🍫</div>
+        </div>
+
+        <div class="footer-message">
+            <p>Forever sweet, forever yours 🍫💕</p>
+        </div>
+    </div>
+
+    <!-- Falling Chocolates Animation -->
+    <script>
+        function spawnFallingChocolate() {
+            const chocolate = document.createElement('div');
+            chocolate.className = 'falling-choco';
+            chocolate.innerText = '🍫';
+            chocolate.style.left = Math.random() * 98 + 'vw';
+            chocolate.style.fontSize = (Math.random() * 2 + 1) + 'em';
+            const duration = Math.random() * 1.5 + 3; // 3s - 4.5s
+            chocolate.style.animationDuration = duration + 's';
+            // Optional: random rotation
+            chocolate.style.transform = `rotate(${Math.random() * 360}deg)`;
+            document.body.appendChild(chocolate);
+            setTimeout(() => {
+                chocolate.remove();
+            }, duration * 1000 + 500);
+        }
+        setInterval(spawnFallingChocolate, 350);
+    </script>
+
+</body>
+</html> ="bg-music" src="YOUR_MUSIC_URL_HERE" autoplay loop></audio>
 
     <!-- Floating chocolate decorations -->
     <div class="chocolate-float chocolate1">🍫</div>
