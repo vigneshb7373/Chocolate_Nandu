@@ -31,6 +31,7 @@
             opacity: 0.3;
             animation: float-animation 6s infinite ease-in-out;
             pointer-events: none;
+            z-index: 500;
         }
 
         .chocolate1 { top: 10%; left: 5%; animation-delay: 0s; }
@@ -121,21 +122,35 @@
             color: #FDBCB4;
         }
 
+        /* Falling chocolates live animation */
+        .falling-choco {
+            position: fixed;
+            top: -40px;
+            z-index: 1000;
+            font-size: 2em;
+            pointer-events: none;
+            user-select: none;
+            animation: fall-choco linear forwards;
+        }
+        @keyframes fall-choco {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0.7;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 padding: 40px 25px;
             }
-
             h1 {
                 font-size: 2em;
             }
-
             .quote {
                 font-size: 1.1em;
                 padding: 20px;
             }
-
             .heart-chocolate {
                 font-size: 2em;
             }
@@ -145,20 +160,16 @@
             .container {
                 padding: 30px 20px;
             }
-
             h1 {
                 font-size: 1.6em;
             }
-
             .quote {
                 font-size: 0.95em;
                 padding: 15px;
             }
-
             .heart-chocolate {
                 font-size: 1.5em;
             }
-
             .chocolate-float {
                 font-size: 2em;
             }
@@ -166,6 +177,9 @@
     </style>
 </head>
 <body>
+
+    <!-- Background Music (replace with your actual music file URL) -->https://m.fringster.com/ringtone/189895/#
+    <audio id="bg-music" src="YOUR_MUSIC_URL_HERE" autoplay loop></audio>
 
     <!-- Floating chocolate decorations -->
     <div class="chocolate-float chocolate1">🍫</div>
@@ -187,7 +201,7 @@
 
         <div class="quote">
             <p class="quote-text">
-                "To my sweet chocolate of life, i remind you that you are and will be the sweetest part of my life till the end. Thanks for giving your sweet life to me for a bite 💋 and enjoy to the end of the life. Happy chocolate day dear Nandu"
+                "To my sweet chocolate of life, i remind you that you are and will be the sweetest part of my life till the end. Thanks for giving your sweet life to me for a bite 💋 and enjoy to the end of the life. Happy chocolate day dear"
             </p>
             <div class="emoji-decoration">🍫 💋 🍫 💋 🍫</div>
         </div>
@@ -196,6 +210,26 @@
             <p>Forever sweet, forever yours 🍫💕</p>
         </div>
     </div>
+
+    <!-- Falling Chocolates Animation -->
+    <script>
+        function spawnFallingChocolate() {
+            const chocolate = document.createElement('div');
+            chocolate.className = 'falling-choco';
+            chocolate.innerText = '🍫';
+            chocolate.style.left = Math.random() * 98 + 'vw';
+            chocolate.style.fontSize = (Math.random() * 2 + 1) + 'em';
+            const duration = Math.random() * 1.5 + 3; // 3s - 4.5s
+            chocolate.style.animationDuration = duration + 's';
+            // Optional: random rotation
+            chocolate.style.transform = `rotate(${Math.random() * 360}deg)`;
+            document.body.appendChild(chocolate);
+            setTimeout(() => {
+                chocolate.remove();
+            }, duration * 1000 + 500);
+        }
+        setInterval(spawnFallingChocolate, 350);
+    </script>
 
 </body>
 </html>
